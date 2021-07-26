@@ -19,7 +19,8 @@
 	],
 	"license": "GPL-3.0-or-later",
 	"dependencies": {
-		"lightfetch-node": "^1.0.0"
+		"lightfetch-node": "^1.0.0",
+		"object-encode": "^1.0.2"
 	},
 	"description": "Use the Replit Login API to create validated SID tokens.",
 	"devDependencies": {

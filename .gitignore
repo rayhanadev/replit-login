@@ -32,6 +32,7 @@ node_modules/
 
 # source files
 src
+tests
 
 # replit
 .replit
