@@ -36,7 +36,7 @@
 		"lint:fix": "eslint src --config ./eslint.config.cjs --ext .js --fix",
 		"format": "prettier --check .",
 		"format:fix": "prettier --write .",
-		"build": "rimraf ./dist/** && rollup --config",
+		"build": "rimraf ./dist/** && rollup --config rollup.config.cjs",
 		"build:cjs": "rimraf ./dist/replit-login.cjs && rollup src/index.js --file dist/replit-login.cjs --format cjs",
 		"build:mjs": "rimraf ./dist/replit-login.mjs && rollup src/index.js --file dist/replit-login.mjs --format esm"
 	},

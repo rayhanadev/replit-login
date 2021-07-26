@@ -1,8 +1,8 @@
 Authenticate Replit users in your projects without ReplAuth. This uses the actual Replit
 Login API to authenticate `connect.sid` tokens and return whether a user would login.
 
-If you have developer permissions you can recieve the value of the `connect.sid` token
-from the login. To recieve developer permissions (unlikely) contact me.
+> There is no (and never will be) documentation for how to use this package. Very sorry
+> but Replit's security comes before open source.
 
 _Note: You will need some frontend component that allows you to use the hCaptcha widget
 to get hCaptcha tokens. If you are just testing then you can use
