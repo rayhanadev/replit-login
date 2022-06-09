@@ -28,6 +28,12 @@ to get hCaptcha tokens. If you are just testing then you can use
 [this website](https://replit-captcha.rayhanadev.repl.co/). The tokens expire in 2
 minutes._
 
+## Personal Note
+In the spirit of open source software I made this codebase public since it only
+abstracts API's that already exist without circumventing a captcha. Use it as a
+tool and abide by the Replit Terms of Service (see below). Improper use of the package can
+result in bans on Replit and possibly legal action.
+
 ## Legal
 
 From https://replit.com/site/terms as pertains to the use of this package. This is not
