@@ -40,16 +40,17 @@ From https://replit.com/site/terms as pertains to the use of this package. This 
 the entire ToS, simply snippets that reference important parts that I thought was
 relevant.
 
-> **Section 5, Item 10**
+> **Section 5 (Prohibited Actions), Item 10**
 > 
 > Interfere with or disrupt the Services or create an undue burden on Replit's Service
 > or the networks or services connected to Replit's Service;
 
 
-> **Section 5, Item 11**
+> **Section 5 (Prohibited Actions), Item 11**
+> 
 > Use the Service to attack or tamper with other websites, services, and individuals;
 
-> **Section 5, Item 13**
+> **Section 5 (Prohibited Actions), Item 13**
 > 
 > Launch any automated system, including without limitation, “robots”, “spiders”, or
 > “offline readers” that access the Service in a manner that sends more request
@@ -64,7 +65,7 @@ relevant.
 > solicit, for commercial purposes, any users of the Service with respect to their
 > content.
 
-> **Section 5, Item 22**
+> **Section 5 (Prohibited Actions), Item 22**
 >
 > Repeatedly fork or clone projects to run or host the same code creating undue load
 > on the Service.
