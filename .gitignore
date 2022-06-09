@@ -30,10 +30,6 @@ node_modules/
 .yarn/install-state.gz
 .pnp.*
 
-# source files
-src
-tests
-
 # replit
 .replit
 replit.nix
