@@ -1,58 +1,51 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 import { lightfetch } from 'lightfetch-node';
-
-const url = 'https://replit.com';
-
-const test = async (token) => {
-	let options = {
-		method: 'GET',
-		headers: {
-			Referrer: url,
-			'X-Requested-With': 'XMLHttpRequest',
-			Cookie: 'connect.sid=' + token,
-		},
-	};
-	const res = await lightfetch(`${url}/~`, options);
-
-	return res.status === 200;
+const headers = {
+    Referrer: 'https://replit.com',
+    'X-Requested-With': 'XMLHttpRequest',
 };
-
-const getCookie = async () => {
-	let options = {
-		method: 'GET',
-		headers: {
-			Referrer: url,
-			'X-Requested-With': 'XMLHttpRequest',
-		},
-	};
-	const res = await lightfetch(`${url}/~`, options);
-
-	return res.cookies['connect.sid'].value;
-};
-
-const login = async (username, password, captcha) => {
-	let options = {
-		method: 'POST',
-		headers: {
-			Referrer: `${url}/login`,
-			'X-Requested-With': 'XMLHttpRequest',
-			'User-Agent': 'Mozilla/5.0',
-			Cookie: 'connect.sid=' + (await getCookie()),
-		},
-		body: {
-			username,
-			password,
-			hCaptchaResponse: captcha,
-			hCaptchaSiteKey: '473079ba-e99f-4e25-a635-e9b661c7dd3e',
-			teacher: false,
-		},
-	};
-	const res = await lightfetch(`${url}/login`, options);
-	const info = await res.json();
-
-	return {
-		...info,
-		token: res.status === 200 ? res.cookies['connect.sid'].value : null,
-	};
-};
-
+function test(token) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const res = yield lightfetch('https://replit.com/~', {
+            method: 'GET',
+            headers: Object.assign(Object.assign({}, headers), { Cookie: 'connect.sid=' + token }),
+        });
+        return res.status === 200;
+    });
+}
+function getCookie() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const res = yield lightfetch('https://replit.com/~', {
+            method: 'GET',
+            headers: Object.assign({}, headers),
+        });
+        return res.cookies['connect.sid'].value;
+    });
+}
+function login(username, password, captcha) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const res = yield lightfetch('https://replit.com/login', {
+            method: 'POST',
+            headers: Object.assign(Object.assign({}, headers), { 'User-Agent': 'Mozilla/5.0', Cookie: 'connect.sid=' + (yield getCookie()) }),
+            body: {
+                username,
+                password,
+                hCaptchaResponse: captcha,
+                hCaptchaSiteKey: '473079ba-e99f-4e25-a635-e9b661c7dd3e',
+                teacher: false,
+            },
+        });
+        const info = yield res.json();
+        const data = Object.assign(Object.assign({}, info), { token: res.status === 200 ? res.cookies['connect.sid'].value : null });
+        return data;
+    });
+}
 export { login, test };
